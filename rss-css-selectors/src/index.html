@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>RSS CSS Selectors</title>
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h2>Something in header</h2>
+      </header>
+      <section class="game-wrapper">
+        <h1 class="task">Select the apple on the middle plate</h1>
+        <div class="table">
+          <plate id="fancy">
+            <apple></apple>
+            <apple class="small"></apple>
+          </plate>
+          <plate>
+            <apple class="animate__animated animate__heartBeat animate__infinite small"></apple>
+          </plate>
+          <plate>
+            <pickle></pickle>
+          </plate>
+        </div>
+        <div class="hint"></div>
+      </section>
+      <section class="editors-wrapper">
+        <div class="editor_workspace editor">
+          <div class="editor__header">Something in workspace editor header</div>
+          <div class="editor__numbers">
+            1
+            <br />
+            2
+            <br />
+            3
+            <br />
+            4
+            <br />
+            5
+            <br />
+            6
+            <br />
+            7
+            <br />
+            8
+            <br />
+            9
+            <br />
+            10
+            <br />
+            11
+            <br />
+            12
+            <br />
+            13
+            <br />
+            14
+            <br />
+            15
+            <br />
+          </div>
+          <div class="editor__codefield">
+            <div class="editor__input-wrapper">
+              <input class="editor__input" type="text" placeholder="Type in a CSS selector" />
+              <button class="editor__button button">Enter</button>
+            </div>
+            <div class="editor__code">
+              Some code
+              <br />
+              Some code 2
+            </div>
+          </div>
+        </div>
+        <div class="editor_viewer editor">
+          <div class="editor__header">Something in viewer editor header</div>
+          <div class="editor__numbers">
+            1
+            <br />
+            2
+            <br />
+            3
+            <br />
+            4
+            <br />
+            5
+            <br />
+            6
+            <br />
+            7
+            <br />
+            8
+            <br />
+            9
+            <br />
+            10
+            <br />
+            11
+            <br />
+            12
+            <br />
+            13
+            <br />
+            14
+            <br />
+            15
+            <br />
+          </div>
+          <div class="editor__codefield">
+            <pre class="editor__code">
+              &lt;div class="table"&gt;
+                &lt;plate id="fancy"&gt;
+                  &lt;apple&gt;&lt;/apple&gt;
+                  &lt;apple class="small"&gt;&lt;/apple&gt;
+                &lt;/plate&gt;
+                &lt;plate&gt;
+                  &lt;apple class="small"&gt;&lt;/apple&gt;
+                &lt;/plate&gt;
+                &lt;plate&gt;
+                  &lt;pickle&gt;&lt;/pickle&gt;
+                &lt;/plate&gt;
+              &lt;/div&gt;
+            </pre>
+          </div>
+        </div>
+      </section>
+      <section class="levels">
+        <h2 class="levels__header">Levels</h2>
+        <ul class="levels__list">
+          <li class="level">Level 1</li>
+          <li class="level">Level 2</li>
+          <li class="level">Level 3</li>
+          <li class="level">Level 4</li>
+        </ul>
+        <button class="button level__button">Reset progress</butt>
+      </section>
+      <footer class="footer">
+        <h2>Something in footer</h2>
+      </footer>
+    </main>
+  </body>
+</html>
