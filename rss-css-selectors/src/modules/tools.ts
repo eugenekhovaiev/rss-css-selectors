@@ -13,7 +13,7 @@ export function getElemAttrStr(elem: Element): string {
     } else {
       elemAttrValue = attr.value;
     }
-    elemAttrStr += ` ${attr.name}="${elemAttrValue}"`;
+    elemAttrStr += elemAttrValue ? ` ${attr.name}="${elemAttrValue}"` : '';
   });
   return elemAttrStr;
 }
