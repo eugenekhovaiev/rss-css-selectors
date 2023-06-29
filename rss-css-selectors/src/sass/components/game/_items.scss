@@ -1,4 +1,5 @@
-plate {
+plate,
+bento {
   position: relative;
   z-index: 10;
 
@@ -8,51 +9,67 @@ plate {
 
   width: 7rem;
   height: 7rem;
-  border-radius: 100%;
-  background-color: lightblue;
 
   border: 1px solid black;
+
+  &#fancy {
+    border: 5px solid purple;
+  }
+
+  apple,
+  orange,
+  pickle {
+    position: absolute;
+  }
 }
 
-apple {
-  position: absolute;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
+plate {
+  border-radius: 100%;
+  background-color: lightblue;
+}
+
+bento {
+  background-color: darkred;
+}
+
+apple, 
+orange, 
+pickle {
   z-index: 10;
 
   width: 5rem;
   height: 5rem;
   border-radius: 100%;
-  background-color: red;
 
   border: 1px solid black;
 
-  &:nth-child(2) {
+  &.small {
+    width: 3rem;
+    height: 3rem;
+  
+    z-index: 100;
+  }
+
+  &:nth-last-child(2) {
     top: 0.5rem;
   }
 }
 
-pickle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-
-  width: 3rem;
-  height: 5rem;
-  border-radius: 100%;
-  background-color: green;
-
-  border: 1px solid black;
+apple {
+  background-color: red;
 }
 
-.small {
-  width: 3rem;
-  height: 3rem;
+orange {
+  background-color: orange;
+}
 
-  z-index: 100;
+pickle {
+  width: 3rem;
+  background-color: green;
+
+  &.small {
+    width: 2rem;
+  }
 }
 
 [data-hovered="true"] {
