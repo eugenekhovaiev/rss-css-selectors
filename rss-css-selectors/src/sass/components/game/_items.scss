@@ -42,6 +42,7 @@ pickle {
   border-radius: 100%;
 
   border: 1px solid black;
+  transition: 0.2s all;
 
   &.small {
     width: 3rem;

@@ -1,59 +1,20 @@
-import { Level } from './types';
-
 import 'normalize.css';
 import './sass/main.scss';
 
+import { currLevel } from './modules/tools';
 import { loadLevel } from './modules/loadLevel';
+import { checkInput } from './modules/checkInput';
 
-const level23: Level = {
-  task: 'Select the apple on the middle plate',
-  layout: `
-  <plate id="fancy">
-    <apple class="small"></apple>
-    <apple></apple>
-  </plate>
-  <plate>
-    <apple class="animate__animated animate__heartBeat animate__infinite small"></apple>
-  </plate>
-  <plate>
-    <pickle for="Sania" from="Viktor"></pickle>
-  </plate>`,
-  helper: 'apple: only-child()',
-};
+loadLevel(currLevel.get());
 
-const level17: Level = {
-  task: 'Select the small apple and the pickle',
-  layout: `
-  <plate id="fancy">
-    <apple class="animate__animated animate__heartBeat animate__infinite small"></apple>
-  </plate>
-  <plate></plate>
-  <plate>
-    <orange class="small"></orange>
-    <orange></orange>
-  </plate>
-  <pickle class="animate__animated animate__heartBeat animate__infinite small"></pickle>`,
-  helper: '.small:last-child',
-};
+const inputElem = document.querySelector('.editor__input') as HTMLInputElement;
+const enterButton = document.querySelector('.editor__button') as HTMLButtonElement;
+const editor = document.querySelector('.editors-wrapper') as HTMLElement;
 
-const level16: Level = {
-  task: 'Select the apple and the pickle on the plates',
-  layout: `
-  <plate>
-    <apple class="animate__animated animate__heartBeat animate__infinite"></apple>
-  </plate>
-  <plate>
-    <pickle class="animate__animated animate__heartBeat animate__infinite"></pickle>
-  </plate>
-  <bento>
-    <pickle></pickle>
-  </bento>
-  <plate>
-    <orange class="small"></orange>
-    <orange></orange>
-  </plate>
-  <pickle class="small"></pickle>`,
-  helper: 'plate :only-child',
-};
-
-loadLevel(level16);
+enterButton.addEventListener('click', checkInput);
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' && document.activeElement === inputElem) enterButton.click();
+});
+editor.addEventListener('click', () => {
+  inputElem.focus();
+});

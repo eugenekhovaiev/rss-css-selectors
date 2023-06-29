@@ -1,9 +1,11 @@
-import { Level } from '../types';
+import { levels } from './levels';
 
 import { getGameCode } from './getGameCode';
 import { connectElemsAndCode } from './connectElemsAndCode';
 
-export function loadLevel(level: Level): void {
+export function loadLevel(levelNum: number): void {
+  const level = levels[levelNum];
+
   const task = document.querySelector('.task') as HTMLElement;
   task.innerHTML = level.task;
 
@@ -15,4 +17,7 @@ export function loadLevel(level: Level): void {
   gameCode.insertAdjacentElement('beforeend', getGameCode(table));
 
   connectElemsAndCode(table, gameCode);
+
+  const input = document.querySelector('.editor__input') as HTMLInputElement;
+  input.value = '';
 }
