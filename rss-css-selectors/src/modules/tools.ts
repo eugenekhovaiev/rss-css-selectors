@@ -36,6 +36,14 @@ export function getLevelNumber(string: string): number {
   return +string.split(' ').slice(0, 1) - 1;
 }
 
+export function highlightChosenLevel(levelNumber: number): void {
+  const levelsListItems: Element[] = [...document.querySelectorAll('.level-item')];
+  levelsListItems.forEach((listItem) => {
+    listItem.classList.remove('level-item_chosen');
+  });
+  levelsListItems[levelNumber].classList.add('level-item_chosen');
+}
+
 export const currLevel = {
   get: function (): number {
     const currLevelSave = window.localStorage.getItem('khovaiev-currLevel');

@@ -44,6 +44,10 @@
       }
     }
 
+    &_chosen {
+      background-color: pink;
+    }
+
     &:hover {
       background-color: blue;
     }

@@ -1,4 +1,4 @@
-import { arrAreEqual, currLevel, progress } from './tools';
+import { arrAreEqual, currLevel, progress, highlightChosenLevel } from './tools';
 import { levels } from './levels';
 import { loadLevel } from './loadLevel';
 import { updateLevelsList } from './updateLevelsList';
@@ -13,6 +13,7 @@ export function checkInput(): void {
   if (+inputStr > 0 && +inputStr <= levels.length) {
     currLevel.set(+inputStr - 1);
     loadLevel(currLevel.get());
+    highlightChosenLevel(currLevel.get());
   } else {
     let selectedElems: Element[] | null[];
     try {
