@@ -12,6 +12,8 @@ bento {
 
   border: 1px solid black;
 
+  transition: 0.3s all;
+
   &#fancy {
     border: 5px solid purple;
   }
@@ -42,7 +44,8 @@ pickle {
   border-radius: 100%;
 
   border: 1px solid black;
-  transition: 0.2s all;
+  
+  transition: 0.3s all;
 
   &.small {
     width: 3rem;

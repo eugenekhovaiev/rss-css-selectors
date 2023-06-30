@@ -3,6 +3,14 @@ import { Level } from '../types';
 export const levels: Level[] = [
   {
     description: '1 Level 1',
+    task: '1. Select fancy plate',
+    layout: `
+      <plate class="animate__animated animate__heartBeat animate__infinite" id="fancy"></plate>
+      <plate></plate>`,
+    helper: '#fancy',
+  },
+  {
+    description: '2 Level 23',
     task: '23. Select the apple on the middle plate',
     layout: `
       <plate id="fancy">
@@ -18,7 +26,7 @@ export const levels: Level[] = [
     helper: 'apple: only-child()',
   },
   {
-    description: '2 Level 2',
+    description: '3 Level 17',
     task: '17. Select the small apple and the pickle',
     layout: `
       <plate id="fancy">
@@ -33,7 +41,7 @@ export const levels: Level[] = [
     helper: '.small:last-child',
   },
   {
-    description: '3 Level 3',
+    description: '4 Level 16',
     task: '16. Select the apple and the pickle on the plates',
     layout: `
       <plate>

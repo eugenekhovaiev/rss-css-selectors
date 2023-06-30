@@ -4,3 +4,8 @@ export interface Level {
   layout: string;
   helper: string;
 }
+
+export interface ProgressSave {
+  completed: number[];
+  helped: number[];
+}

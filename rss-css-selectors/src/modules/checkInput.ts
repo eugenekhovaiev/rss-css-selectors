@@ -1,6 +1,7 @@
-import { arrAreEqual, currLevel } from './tools';
+import { arrAreEqual, currLevel, progress } from './tools';
 import { levels } from './levels';
 import { loadLevel } from './loadLevel';
+import { updateLevelsList } from './updateLevelsList';
 
 export function checkInput(): void {
   const table = document.querySelector('.table') as HTMLElement;
@@ -29,6 +30,10 @@ export function checkInput(): void {
 }
 
 function continueGame(): void {
+  if (!progress.completed.has(currLevel.get())) {
+    progress.completed.add(currLevel.get());
+  }
+
   const table = document.querySelector('.table') as HTMLElement;
   const inputElem = document.querySelector('.editor__input') as HTMLInputElement;
   const neededElems: Element[] = [...table.querySelectorAll('.animate__heartBeat')];
@@ -45,6 +50,7 @@ function continueGame(): void {
     } else {
       loadLevel(currLevel.incr());
     }
+    updateLevelsList();
   }, 500);
 }
 
