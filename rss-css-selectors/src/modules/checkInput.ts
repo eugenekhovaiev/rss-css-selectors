@@ -9,17 +9,22 @@ export function checkInput(): void {
 
   const inputElem = document.querySelector('.editor__input') as HTMLInputElement;
   const inputStr = inputElem.value;
-  let selectedElems: Element[] | null[];
-  try {
-    selectedElems = [...table.querySelectorAll(inputStr)];
-  } catch {
-    selectedElems = [null];
-  }
-
-  if (arrAreEqual(neededElems, selectedElems) && neededElems.length) {
-    continueGame();
+  if (+inputStr > 0 && +inputStr <= levels.length) {
+    currLevel.set(+inputStr - 1);
+    loadLevel(currLevel.get());
   } else {
-    tryAgain(inputElem);
+    let selectedElems: Element[] | null[];
+    try {
+      selectedElems = [...table.querySelectorAll(inputStr)];
+    } catch {
+      selectedElems = [null];
+    }
+
+    if (arrAreEqual(neededElems, selectedElems) && neededElems.length) {
+      continueGame();
+    } else {
+      tryAgain(inputElem);
+    }
   }
 }
 

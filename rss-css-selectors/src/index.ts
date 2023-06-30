@@ -4,6 +4,7 @@ import './sass/main.scss';
 import { currLevel } from './modules/tools';
 import { loadLevel } from './modules/loadLevel';
 import { checkInput } from './modules/checkInput';
+import { createLevelsList } from './modules/createLevelsList';
 
 loadLevel(currLevel.get());
 
@@ -18,3 +19,5 @@ document.addEventListener('keydown', (event) => {
 editor.addEventListener('click', () => {
   inputElem.focus();
 });
+
+createLevelsList();
