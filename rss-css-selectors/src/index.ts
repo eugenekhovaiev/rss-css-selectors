@@ -1,4 +1,5 @@
 import 'normalize.css';
+import 'animate.css';
 import './sass/main.scss';
 
 import { currLevel } from './modules/tools';

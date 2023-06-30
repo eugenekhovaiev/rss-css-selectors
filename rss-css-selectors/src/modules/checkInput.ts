@@ -2,11 +2,12 @@ import { arrAreEqual, currLevel, progress, highlightChosenLevel } from './tools'
 import { levels } from './levels';
 import { loadLevel } from './loadLevel';
 import { updateLevelsList } from './updateLevelsList';
+import { animationClass } from './animationClass';
 
 export function checkInput(): void {
   const table = document.querySelector('.table') as HTMLElement;
 
-  const neededElems: Element[] = [...table.querySelectorAll('.animate__heartBeat')];
+  const neededElems: Element[] = [...table.querySelectorAll(`.${animationClass}`)];
 
   const inputElem = document.querySelector('.editor__input') as HTMLInputElement;
   const inputStr = inputElem.value;
@@ -37,9 +38,9 @@ function continueGame(): void {
 
   const table = document.querySelector('.table') as HTMLElement;
   const inputElem = document.querySelector('.editor__input') as HTMLInputElement;
-  const neededElems: Element[] = [...table.querySelectorAll('.animate__heartBeat')];
+  const neededElems: Element[] = [...table.querySelectorAll(`.${animationClass}`)];
   neededElems.forEach((elem) => {
-    elem.classList.remove('animate__heartBeat');
+    elem.classList.remove(animationClass);
     setTimeout(() => {
       (elem as HTMLElement).style.transform = 'translateY(-50rem)';
     }, 1);
