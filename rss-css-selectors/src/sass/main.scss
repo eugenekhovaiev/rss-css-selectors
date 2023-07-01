@@ -1,18 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+
+  color: rgba(255,255,255,.3);
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #2e2a23;
+  // overflow: hidden;
 }
 
 @import 'components/container';
-
-.game-wrapper {
-  border: 1px solid black;
-}
-
-.editors-wrapper {
-  border: 1px solid black;
-}
-@import 'components/levels-menu/levels-menu';
+@import 'components/header';
+@import 'components/game/game-wrapper';
 @import 'components/game/table';
 @import 'components/game/items';
 @import 'components/game/hint';
+@import 'components/button';
 @import 'components/editors';
+@import 'components/levels-menu';
