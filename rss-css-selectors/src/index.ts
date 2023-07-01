@@ -21,6 +21,14 @@ editor.addEventListener('click', () => {
   inputElem.focus();
 });
 
+inputElem.addEventListener('input', () => {
+  if (inputElem.value === '') {
+    inputElem.classList.add('animate__flash');
+  } else {
+    inputElem.classList.remove('animate__flash');
+  }
+});
+
 const resetButton = document.querySelector('.levels-menu__button') as HTMLButtonElement;
 resetButton.addEventListener('click', () => {
   window.localStorage.clear();
