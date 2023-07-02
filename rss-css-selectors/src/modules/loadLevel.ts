@@ -20,4 +20,5 @@ export function loadLevel(levelNum: number): void {
 
   const input = document.querySelector('.editor__input') as HTMLInputElement;
   input.value = '';
+  input.dispatchEvent(new Event('input'));
 }
