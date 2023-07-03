@@ -26,7 +26,7 @@ export function checkInput(): void {
     if (arrAreEqual(neededElems, selectedElems) && neededElems.length) {
       continueGame();
     } else {
-      tryAgain(inputElem);
+      tryAgain();
     }
   }
 }
@@ -56,7 +56,11 @@ function continueGame(): void {
   }, 500);
 }
 
-function tryAgain(inputElem: HTMLInputElement): void {
-  inputElem.style.backgroundColor = 'red';
-  setTimeout(() => inputElem.removeAttribute('style'), 1000);
+function tryAgain(): void {
+  const editors = document.querySelector('.editors-wrapper') as HTMLElement;
+  editors.classList.add('animate__animated', 'animate__headShake', 'animate__fast');
+
+  setTimeout(() => {
+    editors.classList.remove('animate__animated', 'animate__headShake', 'animate__fast');
+  }, 300);
 }
