@@ -4,4 +4,21 @@
     font-size: 2rem;
     line-height: 4rem;
   }
+
+  .help-button {
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    display: block;
+
+    background-color: rgba(0,0,0,.2);
+    border-radius: 1rem;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    &:active {
+      transform: translateY(0.2rem);
+    }
+  }
 }

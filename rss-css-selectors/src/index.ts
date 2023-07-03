@@ -2,7 +2,8 @@ import 'normalize.css';
 import 'animate.css';
 import './sass/main.scss';
 
-import { currLevel } from './modules/tools';
+import { levels } from './modules/levels';
+import { currLevel, progress, writeStrCharByChar } from './modules/tools';
 import { loadLevel } from './modules/loadLevel';
 import { checkInput } from './modules/checkInput';
 import { updateLevelsList } from './modules/updateLevelsList';
@@ -34,4 +35,13 @@ resetButton.addEventListener('click', () => {
   window.localStorage.clear();
   loadLevel(0);
   updateLevelsList();
+});
+
+const helpButton = document.querySelector('.help-button') as HTMLButtonElement;
+helpButton.addEventListener('click', () => {
+  inputElem.value = '';
+  const helperStr = levels[currLevel.get()].helper;
+  writeStrCharByChar(inputElem, helperStr);
+
+  progress.helped.add(currLevel.get());
 });
