@@ -10,72 +10,130 @@ bento {
   width: 7rem;
   height: 7rem;
 
-  border: 1px solid black;
+  box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.1);
 
   transition: 0.3s all;
-
-  &#fancy {
-    border: 5px solid purple;
-  }
 
   apple,
   orange,
   pickle {
     position: absolute;
   }
+
+  &[data-hovered] {
+    box-shadow: 0 0 0 0.4rem rgba(255, 255, 255, 0.4);
+  }
 }
 
 plate {
   border-radius: 100%;
-  background-color: lightblue;
+  background-color: #fff;
+  border-bottom: 0.3rem solid #ccc;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+    border-top: 0.4rem solid #ccc;
+  }
+
+  &#fancy {
+    &:after {
+      content: '';
+      position: absolute;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 100%;
+      border: 0.7rem solid #009ff2;
+    }
+  }
 }
 
 bento {
-  background-color: darkred;
+  background-color: brown;
+  border: 0.2rem solid #711c12;
+  border-width: 1.2rem 0.2rem;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4rem;
+    border-top: 0.7rem solid rgba(0,0,0,.1);
+  }
 }
 
-apple, 
-orange, 
+apple,
+orange,
 pickle {
   z-index: 10;
 
-  width: 5rem;
-  height: 5rem;
+  // width: 5rem;
+  // height: 5rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 100%;
 
-  border: 1px solid black;
-  
+  border-style: solid;
+  border-width: 0.15rem 0.3rem 0.9rem 0.3rem;
+
+  box-shadow: 0 0.3rem 0 rgba(0,0,0,.2);
+
   transition: 0.3s all;
 
   &.small {
-    width: 3rem;
-    height: 3rem;
-  
+    width: 2.5rem;
+    height: 2.5rem;
+
     z-index: 100;
+    border-bottom-width: 0.6rem;
   }
 
   &:nth-last-child(2) {
     top: 0.5rem;
   }
+
+  &[data-hovered] {
+    box-shadow: 0 0 0 0.4rem rgba(0, 0, 0, 0.3);
+  }
+}
+
+apple,
+orange {
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 30%;
+    background: rgba(255,255,255,.3);
+    border-radius: 100%;
+  }
 }
 
 apple {
-  background-color: red;
+  background-color: #e41919;
+  border-color: #ab1212;
 }
 
 orange {
   background-color: orange;
+  border-color: #bd6e07;
 }
 
 pickle {
-  width: 3rem;
-  background-color: green;
+  width: 2rem;
+  background: #179837;
+  border-radius: 1.9rem;
+  border-color: #025a18;
+  border-width: 0.15rem 0.15rem 0.5rem 0.15rem;
 
   &.small {
-    width: 2rem;
+    height: 3rem;
+    width: 1.5rem;
   }
-}
-
-[data-hovered] {
-  // background-color: blue;
 }
