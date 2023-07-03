@@ -1,5 +1,6 @@
 .header {
   padding-top: 1rem;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,5 +17,35 @@
   &__title {
     margin: 0;
     display: inline-block;
+  }
+
+}
+
+.burger {
+  width: 2rem;
+  height: 1.5rem;
+
+  position: absolute;
+  right: 1rem;
+  z-index: 100;
+
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+
+  cursor: pointer;
+  transition: 0.2s all;
+
+  div {
+    height: 0.15rem;
+    background-color: rgba(255,255,255,.3);
+  }
+
+  &:hover {
+    transform: translateY(-0.15rem);
+  }
+
+  &:active {
+    transform: translateY(0.1rem);
   }
 }

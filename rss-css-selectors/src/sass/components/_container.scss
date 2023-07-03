@@ -1,9 +1,8 @@
 .container {
   margin: 0 auto;
-  // width: 1280px;
   height: 100vh;
   display: grid;
   grid-template-columns: 4fr 1fr;
-  grid-template-rows: max-content repeat(2, 1fr) 3rem;
+  grid-template-rows: max-content repeat(2, 1fr) auto;
   justify-content: center;
 }

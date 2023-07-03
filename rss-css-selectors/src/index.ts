@@ -45,3 +45,9 @@ helpButton.addEventListener('click', () => {
 
   progress.helped.add(currLevel.get());
 });
+
+const burger = document.querySelector('.burger') as HTMLButtonElement;
+const levelsMenu = document.querySelector('.levels-menu') as HTMLButtonElement;
+burger.addEventListener('click', () => {
+  levelsMenu.classList.toggle('visible');
+});
