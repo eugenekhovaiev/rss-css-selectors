@@ -42,6 +42,7 @@ helpButton.addEventListener('click', () => {
   inputElem.value = '';
   const helperStr = levels[currLevel.get()].helper;
   writeStrCharByChar(inputElem, helperStr);
+  inputElem.focus();
 
   progress.helped.add(currLevel.get());
 });
