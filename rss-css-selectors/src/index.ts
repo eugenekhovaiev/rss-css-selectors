@@ -2,11 +2,11 @@ import 'normalize.css';
 import 'animate.css';
 import './sass/main.scss';
 
-import { levels } from './modules/levels';
-import { currLevel, progress, writeStrCharByChar } from './modules/tools';
-import { loadLevel } from './modules/loadLevel';
-import { checkInput } from './modules/checkInput';
-import { updateLevelsList } from './modules/updateLevelsList';
+import { levels } from './modules/globals/levels';
+import { currLevel, progress, writeStrCharByChar } from './modules/utils/utils';
+import { loadLevel } from './modules/app/loadLevel';
+import { checkInput } from './modules/input/checkInput';
+import { updateLevelsList } from './modules/app/updateLevelsList';
 
 loadLevel(currLevel.get());
 updateLevelsList();

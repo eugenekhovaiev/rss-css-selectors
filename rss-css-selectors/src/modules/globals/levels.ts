@@ -1,4 +1,4 @@
-import { Level } from '../types';
+import { Level } from '../../types';
 import { animationClass } from './animationClass';
 
 export const levels: Level[] = [

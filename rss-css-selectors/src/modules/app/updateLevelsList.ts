@@ -1,7 +1,7 @@
-import { levels } from './levels';
-import { getLevelNumber, currLevel, progress, highlightChosenLevel } from './tools';
+import { levels } from '../globals/levels';
+import { getLevelNumber, currLevel, progress, highlightChosenLevel } from '../utils/utils';
 import { loadLevel } from './loadLevel';
-import { Level } from '../types';
+import { Level } from '../../types';
 
 export function updateLevelsList(): void {
   const levelsList = document.querySelector('.levels-menu__list') as HTMLElement;

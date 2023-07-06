@@ -1,4 +1,4 @@
-import { getElemTagName, getElemAttrStr, getElemTop, getElemLeft } from './tools';
+import { getElemTagName, getElemAttrStr, getElemTop, getElemLeft } from '../utils/utils';
 
 export function connectElemsAndCode(table: HTMLElement, gameCode: HTMLElement): void {
   const tableElemsArr = [...table.querySelectorAll('*')];

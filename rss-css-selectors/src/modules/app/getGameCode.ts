@@ -1,4 +1,4 @@
-import { getElemTagName, getElemAttrStr } from './tools';
+import { getElemTagName, getElemAttrStr } from '../utils/utils';
 
 export function getGameCode(elem: HTMLElement): HTMLElement {
   const elemChildrenArr = [...elem.children];

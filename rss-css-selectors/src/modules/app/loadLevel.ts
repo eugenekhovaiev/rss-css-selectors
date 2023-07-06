@@ -1,4 +1,4 @@
-import { levels } from './levels';
+import { levels } from '../globals/levels';
 
 import { getGameCode } from './getGameCode';
 import { connectElemsAndCode } from './connectElemsAndCode';
