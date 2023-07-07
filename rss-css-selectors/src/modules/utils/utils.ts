@@ -2,6 +2,7 @@ import { getElemTagName } from './elements/getElemTagName';
 import { getElemAttrStr } from './elements/getElemAttrStr';
 import { getElemTop } from './elements/getElemTop';
 import { getElemLeft } from './elements/getElemLeft';
+import { getElemWrapped } from './elements/getElemWrapped';
 
 import { getLevelNumber } from './levels/getLevelNumber';
 import { highlightChosenLevel } from './levels/highlightChosenLevel';
@@ -18,6 +19,7 @@ export {
   getElemAttrStr,
   getElemTop,
   getElemLeft,
+  getElemWrapped,
   getLevelNumber,
   highlightChosenLevel,
   getLevelCompletionClass,

@@ -1,4 +1,5 @@
 import { Level } from '../../../types';
+
 import { progress, getLevelNumber } from '../utils';
 
 export function getLevelCompletionClass(level: Level): string {

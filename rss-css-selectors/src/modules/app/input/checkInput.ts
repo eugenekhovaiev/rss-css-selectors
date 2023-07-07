@@ -1,13 +1,10 @@
-import { levels } from '../globals/levels';
-import { animationClass } from '../globals/animationClass';
+import { levels } from '../../globals/levels';
+import { animationClass } from '../../globals/animationClass';
+import { tableElem, inputElem } from '../../globals/elemsFromHTML';
 
-import { tableElem, inputElem } from '../globals/elemsFromHTML';
+import { arrAreEqual } from '../../utils/utils';
 
-import { arrAreEqual } from '../utils/utils';
-
-import { changeLevelFromInput } from './changeLevelFromInput';
-import { continueGame } from './continueGame';
-import { tryAgain } from './tryAgain';
+import { changeLevelFromInput, continueGame, tryAgain } from './input';
 
 export function checkInput(): void {
   const neededElems: Element[] = [...tableElem.querySelectorAll(`.${animationClass}`)];

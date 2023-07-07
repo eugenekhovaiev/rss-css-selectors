@@ -1,6 +1,6 @@
-import { getElemTagName, getElemAttrStr } from '../utils/utils';
+import { getElemTagName, getElemAttrStr } from '../utils';
 
-export function getElemWrappedHTML(elem: HTMLElement): HTMLElement {
+export function getElemWrapped(elem: HTMLElement): HTMLElement {
   const elemChildrenArr = [...elem.children];
   const elemTagName = getElemTagName(elem);
   const elemAttrStr = getElemAttrStr(elem);
@@ -10,7 +10,7 @@ export function getElemWrappedHTML(elem: HTMLElement): HTMLElement {
 
   if (elemChildrenArr.length) {
     elemChildrenArr.forEach((el) => {
-      divWrapper.insertAdjacentElement('beforeend', getElemWrappedHTML(el as HTMLElement));
+      divWrapper.insertAdjacentElement('beforeend', getElemWrapped(el as HTMLElement));
     });
   }
 

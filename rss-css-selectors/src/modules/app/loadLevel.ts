@@ -1,7 +1,8 @@
 import { levels } from '../globals/levels';
 import { tableElem, viewerElem, taskElem, inputElem } from '../globals/elemsFromHTML';
 
-import { getElemWrappedHTML } from './getElemWrappedHTML';
+import { getElemWrapped } from '../utils/utils';
+
 import { connectTableAndViewer } from './connectElemsAndCode';
 
 export function loadLevel(levelNum: number): void {
@@ -12,7 +13,7 @@ export function loadLevel(levelNum: number): void {
   tableElem.innerHTML = level.layout;
 
   viewerElem.innerHTML = '';
-  viewerElem.insertAdjacentElement('beforeend', getElemWrappedHTML(tableElem));
+  viewerElem.insertAdjacentElement('beforeend', getElemWrapped(tableElem));
 
   connectTableAndViewer();
 

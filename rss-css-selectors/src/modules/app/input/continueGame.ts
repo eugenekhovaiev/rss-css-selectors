@@ -1,12 +1,11 @@
-import { animationClass } from '../globals/animationClass';
-import { levels } from '../globals/levels';
+import { animationClass } from '../../globals/animationClass';
+import { levels } from '../../globals/levels';
+import { tableElem, inputElem } from '../../globals/elemsFromHTML';
 
-import { tableElem, inputElem } from '../globals/elemsFromHTML';
+import { currLevel, progress } from '../../utils/utils';
 
-import { currLevel, progress } from '../utils/utils';
-
-import { updateLevelsList } from '../app/updateLevelsList';
-import { loadLevel } from '../app/loadLevel';
+import { updateLevelsList } from '../updateLevelsList';
+import { loadLevel } from '../loadLevel';
 
 export function continueGame(): void {
   if (!progress.completed.has(currLevel.get())) {

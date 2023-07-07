@@ -2,6 +2,7 @@ import { levels } from '../globals/levels';
 import { levelsListElem } from '../globals/elemsFromHTML';
 
 import { currLevel, getLevelNumber, highlightChosenLevel, getLevelCompletionClass } from '../utils/utils';
+
 import { loadLevel } from './loadLevel';
 
 export function updateLevelsList(): void {
