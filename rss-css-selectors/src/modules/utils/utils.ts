@@ -5,6 +5,7 @@ import { getElemLeft } from './elements/getElemLeft';
 
 import { getLevelNumber } from './levels/getLevelNumber';
 import { highlightChosenLevel } from './levels/highlightChosenLevel';
+import { getLevelCompletionClass } from './levels/getLevelCompletionClass';
 
 import { currLevel } from './localStorage/currLevel';
 import { progress } from './localStorage/progress';
@@ -19,6 +20,7 @@ export {
   getElemLeft,
   getLevelNumber,
   highlightChosenLevel,
+  getLevelCompletionClass,
   currLevel,
   progress,
   arrAreEqual,

@@ -1,6 +1,8 @@
 import { animationClass } from '../globals/animationClass';
 import { levels } from '../globals/levels';
 
+import { tableElem, inputElem } from '../globals/elemsFromHTML';
+
 import { currLevel, progress } from '../utils/utils';
 
 import { updateLevelsList } from '../app/updateLevelsList';
@@ -11,9 +13,7 @@ export function continueGame(): void {
     progress.completed.add(currLevel.get());
   }
 
-  const table = document.querySelector('.table') as HTMLElement;
-  const inputElem = document.querySelector('.editor__input') as HTMLInputElement;
-  const neededElems: Element[] = [...table.querySelectorAll(`.${animationClass}`)];
+  const neededElems: Element[] = [...tableElem.querySelectorAll(`.${animationClass}`)];
   neededElems.forEach((elem) => {
     elem.classList.remove(animationClass);
     setTimeout(() => {
@@ -22,7 +22,7 @@ export function continueGame(): void {
   });
   setTimeout(() => {
     if (currLevel.get() === levels.length - 1) {
-      table.innerHTML = 'You win! Good job!';
+      tableElem.innerHTML = 'You win! Good job!';
       inputElem.value = '';
     } else {
       loadLevel(currLevel.incr());

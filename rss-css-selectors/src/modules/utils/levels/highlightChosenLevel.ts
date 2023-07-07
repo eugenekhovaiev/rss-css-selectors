@@ -1,5 +1,7 @@
+import { levelsListElem } from '../../globals/elemsFromHTML';
+
 export function highlightChosenLevel(levelNumber: number): void {
-  const levelsListItems: Element[] = [...document.querySelectorAll('.level-item')];
+  const levelsListItems: Element[] = [...levelsListElem.children];
   levelsListItems.forEach((listItem) => {
     listItem.classList.remove('level-item_chosen');
   });

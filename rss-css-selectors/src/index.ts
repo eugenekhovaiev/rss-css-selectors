@@ -3,6 +3,17 @@ import 'animate.css';
 import './sass/main.scss';
 
 import { levels } from './modules/globals/levels';
+
+import {
+  inputElem,
+  enterButtonElem,
+  resetButtonElem,
+  helpButtonElem,
+  editorsWrapperElem,
+  burgerElem,
+  levelsMenuElem,
+} from './modules/globals/elemsFromHTML';
+
 import { currLevel, progress, writeStrCharByChar } from './modules/utils/utils';
 import { loadLevel } from './modules/app/loadLevel';
 import { checkInput } from './modules/input/checkInput';
@@ -11,14 +22,11 @@ import { updateLevelsList } from './modules/app/updateLevelsList';
 loadLevel(currLevel.get());
 updateLevelsList();
 
-const inputElem = document.querySelector('.editor__input') as HTMLInputElement;
-const editor = document.querySelector('.editors-wrapper') as HTMLElement;
-const enterButton = document.querySelector('.editor__button') as HTMLButtonElement;
-enterButton.addEventListener('click', checkInput);
+enterButtonElem.addEventListener('click', checkInput);
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter' && document.activeElement === inputElem) enterButton.click();
+  if (event.key === 'Enter' && document.activeElement === inputElem) enterButtonElem.click();
 });
-editor.addEventListener('click', () => {
+editorsWrapperElem.addEventListener('click', () => {
   inputElem.focus();
 });
 
@@ -30,15 +38,13 @@ inputElem.addEventListener('input', () => {
   }
 });
 
-const resetButton = document.querySelector('.levels-menu__button') as HTMLButtonElement;
-resetButton.addEventListener('click', () => {
+resetButtonElem.addEventListener('click', () => {
   window.localStorage.clear();
   loadLevel(0);
   updateLevelsList();
 });
 
-const helpButton = document.querySelector('.help-button') as HTMLButtonElement;
-helpButton.addEventListener('click', () => {
+helpButtonElem.addEventListener('click', () => {
   inputElem.value = '';
   const helperStr = levels[currLevel.get()].helper;
   writeStrCharByChar(inputElem, helperStr);
@@ -47,8 +53,6 @@ helpButton.addEventListener('click', () => {
   progress.helped.add(currLevel.get());
 });
 
-const burger = document.querySelector('.burger') as HTMLButtonElement;
-const levelsMenu = document.querySelector('.levels-menu') as HTMLButtonElement;
-burger.addEventListener('click', () => {
-  levelsMenu.classList.toggle('visible');
+burgerElem.addEventListener('click', () => {
+  levelsMenuElem.classList.toggle('visible');
 });
