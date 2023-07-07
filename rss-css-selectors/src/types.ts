@@ -9,3 +9,7 @@ export interface ProgressSave {
   completed: number[];
   helped: number[];
 }
+
+export type ElemType<T> = {
+  new (): T;
+};

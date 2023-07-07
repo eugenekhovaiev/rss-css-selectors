@@ -26,7 +26,11 @@ export function updateLevelsList(): void {
   levelsListItems.forEach((item, index) => {
     item.addEventListener('click', () => {
       highlightChosenLevel(index);
-      const levelNumber = getLevelNumber(item.textContent as string);
+      const itemInnerText = item.textContent;
+      if (typeof itemInnerText !== 'string') {
+        throw new Error(`Missing inner text in levels list item number ${index + 1}`);
+      }
+      const levelNumber = getLevelNumber(itemInnerText);
       currLevel.set(levelNumber);
       loadLevel(levelNumber);
     });

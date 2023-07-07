@@ -10,7 +10,10 @@ export function getElemWrapped(elem: HTMLElement): HTMLElement {
 
   if (elemChildrenArr.length) {
     elemChildrenArr.forEach((el) => {
-      divWrapper.insertAdjacentElement('beforeend', getElemWrapped(el as HTMLElement));
+      if (!(el instanceof HTMLElement)) {
+        throw new Error(`Element ${el.outerHTML} is not an HTML element!`);
+      }
+      divWrapper.insertAdjacentElement('beforeend', getElemWrapped(el));
     });
   }
 

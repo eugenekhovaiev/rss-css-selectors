@@ -16,7 +16,10 @@ export function continueGame(): void {
   neededElems.forEach((elem) => {
     elem.classList.remove(animationClass);
     setTimeout(() => {
-      (elem as HTMLElement).style.transform = 'translateY(-50rem)';
+      if (!(elem instanceof HTMLElement)) {
+        throw new Error(`Element ${elem.outerHTML} is not an HTML element!`);
+      }
+      elem.style.transform = 'translateY(-50rem)';
     }, 1);
   });
   setTimeout(() => {

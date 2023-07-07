@@ -1,15 +1,25 @@
-export const taskElem = document.querySelector('.task') as HTMLHeadingElement;
-export const helpButtonElem = document.querySelector('.help-button') as HTMLButtonElement;
-export const tableElem = document.querySelector('.table') as HTMLDivElement;
-export const hintElem = document.querySelector('.hint') as HTMLDivElement;
+import { ElemType } from '../../types';
 
-export const editorsWrapperElem = document.querySelector('.editors-wrapper') as HTMLElement;
-export const inputElem = document.querySelector('.editor__input') as HTMLInputElement;
-export const enterButtonElem = document.querySelector('.editor__button') as HTMLButtonElement;
+function getElem<T>(selector: string, elemType: ElemType<T>): T {
+  const elem = document.querySelector(selector);
+  if (!(elem instanceof elemType)) {
+    throw new Error(`Element with '${selector}' class is missing!`);
+  }
+  return elem;
+}
 
-export const viewerElem = document.querySelector('.editor_viewer .editor__codefield') as HTMLDivElement;
+export const taskElem = getElem<HTMLHeadingElement>('.task', HTMLHeadingElement);
+export const helpButtonElem = getElem<HTMLButtonElement>('.help-button', HTMLButtonElement);
+export const tableElem = getElem<HTMLDivElement>('.table', HTMLDivElement);
+export const hintElem = getElem<HTMLDivElement>('.hint', HTMLDivElement);
 
-export const levelsMenuElem = document.querySelector('.levels-menu') as HTMLButtonElement;
-export const burgerElem = document.querySelector('.burger') as HTMLDivElement;
-export const levelsListElem = document.querySelector('.levels-menu__list') as HTMLUListElement;
-export const resetButtonElem = document.querySelector('.levels-menu__button') as HTMLButtonElement;
+export const editorsWrapperElem = getElem<HTMLElement>('.editors-wrapper', HTMLElement);
+export const inputElem = getElem<HTMLInputElement>('.editor__input', HTMLInputElement);
+export const enterButtonElem = getElem<HTMLButtonElement>('.editor__button', HTMLButtonElement);
+
+export const viewerElem = getElem<HTMLDivElement>('.editor_viewer .editor__codefield', HTMLDivElement);
+
+export const levelsMenuElem = getElem<HTMLElement>('.levels-menu', HTMLElement);
+export const burgerElem = getElem<HTMLDivElement>('.burger', HTMLDivElement);
+export const levelsListElem = getElem<HTMLUListElement>('.levels-menu__list', HTMLUListElement);
+export const resetButtonElem = getElem<HTMLButtonElement>('.levels-menu__button', HTMLButtonElement);
