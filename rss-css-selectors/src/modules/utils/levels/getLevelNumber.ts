@@ -1,3 +1,8 @@
 export function getLevelNumber(string: string): number {
-  return +string.split(' ').slice(0, 1) - 1;
+  const levelNumberStr = string.split(' ')[0];
+  const levelNumber1Based = +levelNumberStr;
+  if (levelNumberStr !== `${levelNumber1Based}`) {
+    throw new Error(`'${string}' is not valid level name!`);
+  }
+  return levelNumber1Based - 1;
 }

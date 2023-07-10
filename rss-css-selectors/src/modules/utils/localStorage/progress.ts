@@ -1,12 +1,6 @@
 import { ProgressSave } from '../../../types';
 
-function getProgressSaveObj(): ProgressSave | null {
-  const progressSaveStr = window.localStorage.getItem('khovaiev-progress');
-  if (progressSaveStr) {
-    return JSON.parse(progressSaveStr);
-  }
-  return null;
-}
+import { getProgressSaveObj } from '../utils';
 
 export const progress = {
   has: function (levelNumber: number, where: 'completed' | 'helped'): boolean {

@@ -9,6 +9,7 @@ import { highlightChosenLevel } from './levels/highlightChosenLevel';
 import { getLevelCompletionClass } from './levels/getLevelCompletionClass';
 
 import { currLevel } from './localStorage/currLevel';
+import { getProgressSaveObj } from './localStorage/getProgressSaveObj';
 import { progress } from './localStorage/progress';
 
 import { arrAreEqual } from './arrAreEqual';
@@ -24,6 +25,7 @@ export {
   highlightChosenLevel,
   getLevelCompletionClass,
   currLevel,
+  getProgressSaveObj,
   progress,
   arrAreEqual,
   writeStrCharByChar,
