@@ -2,7 +2,7 @@ import { levels } from '../../globals/levels';
 import { animationClass } from '../../globals/animationClass';
 import { tableElem, inputElem } from '../../globals/elemsFromHTML';
 
-import { arrAreEqual } from '../../utils/utils';
+import { arrsAreEqual } from '../../utils/utils';
 
 import { changeLevelFromInput, continueGame, tryAgain } from './input';
 
@@ -21,7 +21,7 @@ export function checkInput(): void {
       selectedElemsArr = [null];
     }
 
-    if (arrAreEqual(neededElems, selectedElemsArr) && neededElems.length) {
+    if (arrsAreEqual(neededElems, selectedElemsArr) && neededElems.length) {
       continueGame();
     } else {
       tryAgain();

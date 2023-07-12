@@ -12,7 +12,7 @@ import { currLevel } from './localStorage/currLevel';
 import { getProgressSaveObj } from './localStorage/getProgressSaveObj';
 import { progress } from './localStorage/progress';
 
-import { arrAreEqual } from './arrAreEqual';
+import { arrsAreEqual } from './arrsAreEqual';
 import { writeStrCharByChar } from './writeStrCharByChar';
 
 export {
@@ -27,6 +27,6 @@ export {
   currLevel,
   getProgressSaveObj,
   progress,
-  arrAreEqual,
+  arrsAreEqual,
   writeStrCharByChar,
 };
