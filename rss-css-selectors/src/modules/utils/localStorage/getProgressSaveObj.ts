@@ -1,9 +1,9 @@
-import { ProgressSave } from '../../../types';
+import { SimpleUtilFunc, ProgressSave } from '../../../types';
 
-export function getProgressSaveObj(): ProgressSave | null {
+export const getProgressSaveObj: SimpleUtilFunc<void, ProgressSave | null> = () => {
   const progressSaveStr = window.localStorage.getItem('khovaiev-progress');
   if (progressSaveStr) {
     return JSON.parse(progressSaveStr);
   }
   return null;
-}
+};

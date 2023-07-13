@@ -1,14 +1,14 @@
-import { ProgressSave } from '../../../types';
+import { ProgressUtils, ProgressSave } from '../../../types';
 
 import { getProgressSaveObj } from '../utils';
 
-export const progress = {
-  has: function (levelNumber: number, where: 'completed' | 'helped'): boolean {
+export const progress: ProgressUtils = {
+  has: function (levelNumber, where): boolean {
     const progressSaveObj = getProgressSaveObj();
     return !!progressSaveObj && progressSaveObj[where]?.includes(levelNumber);
   },
 
-  add: function (levelNumber: number, where: 'completed' | 'helped'): void {
+  add: function (levelNumber, where): void {
     const progressSaveObj = getProgressSaveObj();
     if (progressSaveObj) {
       progressSaveObj[where].push(levelNumber);
@@ -31,22 +31,22 @@ export const progress = {
   },
 
   completed: {
-    has: function (levelNumber: number): boolean {
+    has: function (levelNumber): boolean {
       return progress.has(levelNumber, 'completed');
     },
 
-    add: function (levelNumber: number): void {
-      return progress.add(levelNumber, 'completed');
+    add: function (levelNumber) {
+      progress.add(levelNumber, 'completed');
     },
   },
 
   helped: {
-    has: function (levelNumber: number): boolean {
+    has: function (levelNumber) {
       return progress.has(levelNumber, 'helped');
     },
 
-    add: function (levelNumber: number): void {
-      return progress.add(levelNumber, 'helped');
+    add: function (levelNumber) {
+      progress.add(levelNumber, 'helped');
     },
   },
 };

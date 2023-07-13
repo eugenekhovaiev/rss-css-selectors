@@ -1,4 +1,6 @@
-export function getElemAttrStr(elem: Element): string {
+import { SimpleUtilFunc } from '../../../types';
+
+export const getElemAttrStr: SimpleUtilFunc<Element, string> = (elem) => {
   const elemAttrArr = [...elem.attributes].filter((attr) => !attr.name.includes('data'));
   let elemAttrStr = '';
   elemAttrArr.forEach((attr) => {
@@ -14,4 +16,4 @@ export function getElemAttrStr(elem: Element): string {
     elemAttrStr += elemAttrValue ? ` ${attr.name}="${elemAttrValue}"` : '';
   });
   return elemAttrStr;
-}
+};

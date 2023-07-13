@@ -1,1 +1,3 @@
-export const getElemLeft = (elem: Element): number => elem.getBoundingClientRect().left + window.scrollX;
+import { SimpleUtilFunc } from '../../../types';
+
+export const getElemLeft: SimpleUtilFunc<Element, number> = (elem) => elem.getBoundingClientRect().left + window.scrollX;

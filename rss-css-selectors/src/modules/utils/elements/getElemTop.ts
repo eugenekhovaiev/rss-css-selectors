@@ -1,1 +1,3 @@
-export const getElemTop = (elem: Element): number => elem.getBoundingClientRect().top + window.scrollY;
+import { SimpleUtilFunc } from '../../../types';
+
+export const getElemTop: SimpleUtilFunc<Element, number> = (elem) => elem.getBoundingClientRect().top + window.scrollY;

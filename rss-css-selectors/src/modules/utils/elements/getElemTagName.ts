@@ -1,1 +1,3 @@
-export const getElemTagName = (elem: Element): string => elem.tagName.toLowerCase();
+import { SimpleUtilFunc } from '../../../types';
+
+export const getElemTagName: SimpleUtilFunc<Element, string> = (elem) => elem.tagName.toLowerCase();

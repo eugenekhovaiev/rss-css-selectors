@@ -1,6 +1,8 @@
+import { SimpleUtilFunc } from '../../../types';
+
 import { getElemTagName, getElemAttrStr } from '../utils';
 
-export function getElemWrapped(elem: HTMLElement): HTMLElement {
+export const getElemWrapped: SimpleUtilFunc<Element, HTMLElement> = (elem) => {
   const elemChildrenArr = [...elem.children];
   const elemTagName = getElemTagName(elem);
   const elemAttrStr = getElemAttrStr(elem);
@@ -19,4 +21,4 @@ export function getElemWrapped(elem: HTMLElement): HTMLElement {
 
   divWrapper.insertAdjacentText('beforeend', `</${elemTagName}>`);
   return divWrapper;
-}
+};
