@@ -15,4 +15,5 @@ npm run start
 - TypeScript
 - HTML / SCSS
 - ESLint / Prettier
+- Jest
 - Webpack
